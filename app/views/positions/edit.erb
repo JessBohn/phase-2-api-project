@@ -1,0 +1,18 @@
+<h3>Add a new evaluation</h3>
+<form action="/positions/<%=@position.id%>" method="POST">
+<input type="hidden" name="_method" value="put"/>
+  <p>
+    <label name="summary">Summary</label>
+    <input name="summary" type="text" />
+  </p>
+
+  <p>
+    <label name="probation">Probation?</label>
+    <input name="probation" type="text" />
+  </p>
+
+  <p>
+    <input type="submit" />
+  </p>
+
+</form>

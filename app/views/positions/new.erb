@@ -1,6 +1,7 @@
 <h1>Add Position for <%=@user.name%></h1>
 
-<form action="/create_position/<%=@user.id%>" method="GET">
+<form action="/users/<%=@user.id%>" method="POST">
+  <input type="hidden" name="_method" value="put"/>
   <p>
     <label name="title">Title</label>
     <input name="title" type="text"/>
