@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :positions
+  has_many :evaluations
 
   def evaluations
     positions.map{|p| p.evaluations}.flatten
