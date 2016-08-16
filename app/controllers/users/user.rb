@@ -7,12 +7,16 @@ get '/users/new' do
 end
 
 post '/users/new' do
+  p params
   user = User.new(email: params[:name],
                   name: params[:name],
                   password: params[:password])
   user.avatar = Faker::Avatar.image(Faker::Lorem.word, "80x80")
-
-  redirect "/users"
+  if user.save
+    redirect "/users"
+  else
+    redirect "/users/new"
+  end
 end
 
 get '/users/:id/edit' do
