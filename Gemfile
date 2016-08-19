@@ -13,10 +13,9 @@ gem 'activerecord', '~>4.1'
 
 gem 'rake'
 gem 'shotgun'
-gem 'faker'
 gem 'pry'
 gem 'bcrypt'
-gem 'swapi'
+gem 'tatooine'
 
 group :test do
   gem 'shoulda-matchers'
