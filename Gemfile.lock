@@ -79,7 +79,6 @@ GEM
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
     slop (3.6.0)
-    swapi (0.0.2)
     tatooine (1.0.1)
       faraday (~> 0.9.0)
       faraday_middleware
@@ -109,7 +108,6 @@ DEPENDENCIES
   shoulda-matchers
   sinatra
   sinatra-contrib
-  swapi
   tatooine
 
 BUNDLED WITH
