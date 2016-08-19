@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'bcrypt'
+require 'swapi'
 
 
 # Some helper constants for path-centric logic
