@@ -1,1 +1,18 @@
-<h2>Homepage</h2>
+<h2>Star Wars Addiction</h2>
+
+<div id="content-listing" class="ui segments">
+  <div class="ui inverted segment">
+  <p>Films</p>
+  </div>
+  <div>
+  <ul id="film-list">
+    <%  Film.all.each do |film| %>
+      <li id="film" class="ui secondary segment">Episode <%=film.episode%>: <%= film.title %></li>
+      <div hidden id="film-residents" class="ui segments">
+        <p class="ui segment" id="opening_crawl"><%= film.opening_crawl %></p>
+      </div>
+    <% end %>
+  </ul>
+  </div>
+</div>
+

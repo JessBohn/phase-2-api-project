@@ -3,3 +3,18 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+ul
+{
+    list-style-type: none;
+}
+
+#content-listing {
+  margin: auto;
+  width: 80%;
+}
+
+#film {
+  margin: auto;
+  width: 90%;
+}
