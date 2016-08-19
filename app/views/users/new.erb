@@ -1,6 +1,6 @@
 <h1>Create a new Work Being</h1>
 
-<form action="/create_user" method="GET">
+<form action="/users/new" method="POST">
   <p>
     <label name="name">Name</label>
     <input name="name" type="text" />
@@ -8,12 +8,12 @@
 
   <p>
     <label name="email">Email</label>
-    <input name="email" type="text" />
+    <input name="email" type="email" />
   </p>
 
   <p>
-    <label name="pasword">Password</label>
-    <input name="password" type="text" />
+    <label name="original_pw">Password</label>
+    <input name="original_pw" type="password" />
   </p>
 
   <p>
