@@ -1,9 +1,19 @@
-<div class="container">
-<h2>Login below</h2>
+<div class="form">
+  <h1>Login to your Star Wars Addiction account</h1>
+  <br>
+  <% if session[:nonval_user] %>
+    Password and/or username are incorrect
+    <%= erb :"users/_errors", { layout: false, locals: { errors: session[:nonval_user].errors.values.flatten } } %>
+  <% end %>
+  <form action="/login" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" />
+    <br>
 
-<form id="login-form" method="post" action="/login">
-  <input type="text" name="email" placeholder="Email"/>
-  <input type="password" name="password" placeholder="Password"/>
-  <button type="submit" name="login" value="Login"/>
-</form>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" />
+    <br><br>
+
+    <button id="login" type="submit" value="Submit">Login</button>
+  </form>
 </div>

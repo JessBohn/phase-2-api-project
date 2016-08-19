@@ -1,25 +1,20 @@
-# get '/login' do
-  # erb :"users/login"
-# end
-#
-# post '/login' do
-  # @user = User.find_by(email: params[:email])
-  # if @user.password == params[:password]
-    # redirect '/'
-  # else
-    # redirect '/login'
-  # end
-#
-# end
+get '/login' do
+  erb :"users/login"
+end
 
+post '/login' do
+  @user = User.find_by(username: params[:username])
+  if @user.password == params[:password]
+    session.delete(:nonval_user)
+    session[:user] = @user
+    redirect '/'
+  else
+    session[:nonval_user] = @user
+    redirect '/login'
+  end
+end
 
-# post '/login' do
-#   @user = User.find_by(username: params[:username])
-#   if @user.username == params[:username]
-#     session[:user] = @user.username
-#     redirect '/cats'
-#   else
-#     @errors = "Invalid username or password"
-#     redirect '/login'
-#   end
-# end
+get '/logout' do
+  session.delete(:user)
+  redirect '/'
+end

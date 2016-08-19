@@ -1,3 +1,3 @@
-# def current_user
-#   session[:user]
-# end
+def current_user
+  session[:user]
+end

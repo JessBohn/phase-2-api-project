@@ -1,22 +1,11 @@
-<h1>Create a new Work Being</h1>
+<div class="container">
+  <h3>Welcome to Star Wars Addiction</h3>
+  <br>
+  <p>Create an account below</p>
+  <br>
 
-<form action="/users/new" method="POST">
-  <p>
-    <label name="name">Name</label>
-    <input name="name" type="text" />
-  </p>
-
-  <p>
-    <label name="email">Email</label>
-    <input name="email" type="email" />
-  </p>
-
-  <p>
-    <label name="original_pw">Password</label>
-    <input name="original_pw" type="password" />
-  </p>
-
-  <p>
-    <input type="submit" />
-  </p>
-</form>
+  <% if session[:nonval_user] %>
+    <%= erb :"users/_errors", { layout: false, locals: { errors: session[:nonval_user].errors.values.flatten } } %>
+  <% end %>
+  <%= erb :'users/_registration_form', { layout: false, locals: { post: @post } } %>
+</div>
